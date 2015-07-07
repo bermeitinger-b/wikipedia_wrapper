@@ -2,8 +2,10 @@
 
 __author__ = 'bernhard'
 
-from get_article import get_content
+from wikipedia_wrapper.get_article import write_to_file, get_content
 
-get_content('Jupiter')
-get_content('Obama')
-get_content('Paris')
+write_to_file('Jupiter')
+write_to_file('Obama')
+write_to_file('Paris')
+
+# for internal use, use get_content('Jupiter')

@@ -66,7 +66,7 @@ def __get_content(article_name):
     if content is "":
         raise PageNotFoundException("The content of the page '{}' is empty.".format(article_name))
     else:
-        return content
+        return '\n'.join(nltk.sent_tokenize(text=content))  # one sentence per line
 
 
 def get_content(article_name):
@@ -80,8 +80,7 @@ def write_to_file(article_name):
     if os.path.isfile(filename):
         os.remove(filename)
     with open(filename, mode='w') as outfile:
-        sentences = nltk.sent_tokenize(text=content)  # tokenize sentences
-        outfile.write('\n'.join(sentences))
+        outfile.write(content)
 
 if __name__ == '__main__':
     if len(sys.argv) != 2:
