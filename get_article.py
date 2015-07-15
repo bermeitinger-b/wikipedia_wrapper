@@ -5,6 +5,7 @@ import sys
 import re
 import os
 import nltk
+import urllib
 
 import wikipedia
 wikipedia.set_lang('en')  # set english as default language
@@ -41,8 +42,6 @@ def __get_content(article_name):
     :type article_name: str
     :return:
     """
-
-    article_name = article_name.lower()
 
     content = ""
 
