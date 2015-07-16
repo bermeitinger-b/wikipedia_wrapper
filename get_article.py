@@ -5,7 +5,6 @@ import sys
 import re
 import os
 import nltk
-import urllib
 
 import wikipedia
 wikipedia.set_lang('en')  # set english as default language
